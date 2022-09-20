@@ -141,15 +141,12 @@ def main(win, width):
 				elif spot == end:
 					end = None
 			if event.type == pygame.KEYDOWN:
-				if event.key == pygame.K_RETURN:
+				if event.key == pygame.K_RETURN and start and end:
 					for row in grid:
 						for spot in row:
 							spot.update_neighbour(grid)
 					a_star_algorithm(lambda: draw(win, grid, rows, width), grid, start, end)
-				if event.key == pygame.K_BACKSPACE:
-					start = None
-					end = None
-					grid = make_board(rows, width)
+				
 
 	pygame.quit()
 
