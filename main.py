@@ -72,6 +72,16 @@ def main(win, width):
 				elif location != end and location != start:
 					location.create_blocker()
 
+			elif pygame.mouse.get_pressed()[2]: 
+				pos = pygame.mouse.get_pos()
+				row, col = get_clicked_pos(pos, rows, width)
+				spot = grid[row][col]
+				spot.reset_board()
+				if spot == start:
+					start = None
+				elif spot == end:
+					end = None
+
 	pygame.quit()
 
 main(WINDOW, width)
