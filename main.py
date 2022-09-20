@@ -146,7 +146,10 @@ def main(win, width):
 						for spot in row:
 							spot.update_neighbour(grid)
 					a_star_algorithm(lambda: draw(win, grid, rows, width), grid, start, end)
-				
+				if event.key == pygame.K_BACKSPACE:
+					start = None
+					end = None
+					grid = make_board(rows, width)
 
 	pygame.quit()
 
