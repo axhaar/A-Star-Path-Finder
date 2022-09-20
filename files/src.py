@@ -48,5 +48,19 @@ class Node:
     def draw(self,window):
         pygame.draw.rect(window,self.color,(self.x,self.y,self.width,self.width))
 
+    def update_neighbour(self,grid):
+        self.neighbours = []
+        if self.row < self.total_rows -1 and not grid[self.row + 1][self.col].is_blocked():
+            self.neighbours.append(grid[self.row + 1][self.col])
+
+        if self.row > 0 and not grid[self.row - 1][self.col].is_blocked():
+            self.neighbours.append(grid[self.row - 1][self.col])
+
+        if self.col < self.total_rows -1 and not grid[self.row][self.col + 1].is_blocked():
+            self.neighbours.append(grid[self.row][self.col + 1])   
+        
+        if self.col > 0 and not grid[self.row][self.col - 1].is_blocked():
+            self.neighbours.append(grid[self.row][self.col - 1])  
+
     def __lt__(self, other):
         return False
