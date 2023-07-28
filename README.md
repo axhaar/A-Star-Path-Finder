@@ -1,6 +1,6 @@
 # A-Star-Path-Finder
 A visualizer for A* Pathfinding Algorithm
-![project-demo](https://github.com/axhaar/A-Star-Path-Finder/blob/main/files/demo.gif)
+![](https://github.com/A-Star-Path-Finder/blob/main/files/demo.gif)
 
 
 ## Controls 🎮
